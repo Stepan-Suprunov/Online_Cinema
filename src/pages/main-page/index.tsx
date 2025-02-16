@@ -1,7 +1,11 @@
+import {MainPageLayout} from '../../components/layouts/index';
+
 export function MainPage() {
     return (
-        <div>
-            HelloWorld
-        </div>
+        <MainPageLayout>
+            <div>
+                HelloWorld
+            </div>
+        </MainPageLayout>
     );
 };

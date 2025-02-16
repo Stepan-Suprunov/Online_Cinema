@@ -1,10 +1,16 @@
 import React from 'react';
 import {MainPage} from './pages/index';
+import {IContentUnit} from './types';
 
-function App() {
+type AppPropsType = {
+    store: IContentUnit[]
+}
+
+function App(props: AppPropsType) {
+    const {store} = props;
 
     return (
-            <MainPage/>
+        <MainPage store={store}/>
     );
 };
 

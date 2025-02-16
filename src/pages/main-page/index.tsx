@@ -1,11 +1,20 @@
 import {MainPageLayout} from '../../components/layouts/index';
+import {IContentUnit} from '../../types';
+import {ContentTab} from '../../components/index';
 
-export function MainPage() {
+type MainPagePropsType = {
+    store: IContentUnit[]
+};
+
+export function MainPage(props: MainPagePropsType) {
+    const {store} = props;
+
     return (
         <MainPageLayout>
-            <div>
-                HelloWorld
-            </div>
+            {store.map((unit: IContentUnit) => <ContentTab
+                key={unit.id}
+                contentUnit={unit}
+            />)}
         </MainPageLayout>
     );
 };
